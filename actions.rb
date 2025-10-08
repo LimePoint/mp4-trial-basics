@@ -42,7 +42,8 @@ end
 # result.status, result.stdout, result.stderr, 
 action :run_shell_with_output do
   result = exec_command 'whoami'
-  OpsChain.logger.info "value of result: #{result}"
-  OpsChain.logger.info "did the command succeed: #{result.status}"
+  OpsChain.logger.info "value of result: #{result.stdout}"
+  OpsChain.logger.info "value of result error: #{result.stderr}"
+  OpsChain.logger.info "did the command succeed: #{result.success?}" # result.failed?
 end
 
