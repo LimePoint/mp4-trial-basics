@@ -13,3 +13,6 @@ end
 action :run_script do
   sh 'sh scripts/hello.sh'
 end
+
+# Using logging
+OpsChain.logger.info("----------- logger info --------- ")
