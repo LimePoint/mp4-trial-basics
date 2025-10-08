@@ -1,3 +1,4 @@
+my_value = 'set_from_outside_action'
 
 # simple shell commands
 action :run_shell_commands do
