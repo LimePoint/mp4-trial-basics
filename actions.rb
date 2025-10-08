@@ -41,7 +41,8 @@ end
 
 # result.status, result.stdout, result.stderr, 
 action :run_shell_with_output do
-  result = exec_command 'bash ./hello_world.sh'
-  OpsChain.logger.info "Failed with: #{result.stderr}" if result.failed?
+  result = exec_command 'whoami'
+  OpsChain.logger.info "value of result: #{result}"
+  OpsChain.logger.info "did the command succeed: #{result.status}"
 end
 
