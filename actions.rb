@@ -28,4 +28,7 @@ action :run_any_ruby do
   f = 'scripts/hello.sh'
   content = File.read(f)
   puts "value of content from file #{f} is: \n #{content}"
+  OpsChain.logger.info("You can output log via logger too - #{content}")
 end
+
+
