@@ -7,6 +7,7 @@ action :run_shell_commands do
   sh "echo 'this will print list of users'; cat /etc/passwd"
   sh 'MY_VAR=test; echo value of my_var in the same sh: ${MY_VAR}'
   sh 'echo value of my_var in the subsequent sh: ${MY_VAR}' # variables from previous cannot be used in subsequent calls, each is run in its own shell
+  sh "echo value of my_value: #{my_value}"
 end
 
 # simple scripts
@@ -31,4 +32,11 @@ action :run_any_ruby do
   OpsChain.logger.info("You can output log via logger too - #{content}")
 end
 
+# working with output of commands
+
+# result.status, result.stdout, result.stderr, 
+action :run_shell_with_output do
+  result = exec_command 'bash ./hello_world.sh'
+  OpsChain.logger.info "Failed with: #{result.stderr}" if result.failed?
+end
 
