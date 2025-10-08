@@ -14,5 +14,9 @@ action :run_script do
   sh 'sh scripts/hello.sh'
 end
 
-# Using logging
+# Using logging - this will run before any actions (think of this as code in the recipe)
 OpsChain.logger.info("----------- logger info --------- ")
+
+my_value = 'set_from_outside_action'
+
+OpsChain.logger.info ("Value of my_value = #{my_value}")
