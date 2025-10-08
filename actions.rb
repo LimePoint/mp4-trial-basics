@@ -1,4 +1,5 @@
 
+new_value='new value'
 # simple shell commands
 action :run_shell_commands do
   sh 'echo default shell: ${SHELL}'
@@ -7,7 +8,9 @@ action :run_shell_commands do
   sh "echo 'this will print list of users'; cat /etc/passwd"
   sh 'MY_VAR=test; echo value of my_var in the same sh: ${MY_VAR}'
   sh 'echo value of my_var in the subsequent sh: ${MY_VAR}' # variables from previous cannot be used in subsequent calls, each is run in its own shell
-  sh "echo value of my_value: #{my_value}"
+ # sh "echo value of my_value: #{my_value}" # this will not work as my_value is defined after this action block
+  sh "echo value of new_value: #{new_value}" # this will work as new_value is defined before action block
+
 end
 
 my_value = 'set_from_outside_action'
