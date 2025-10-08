@@ -1,4 +1,3 @@
-my_value = 'set_from_outside_action'
 
 # simple shell commands
 action :run_shell_commands do
@@ -10,6 +9,8 @@ action :run_shell_commands do
   sh 'echo value of my_var in the subsequent sh: ${MY_VAR}' # variables from previous cannot be used in subsequent calls, each is run in its own shell
   sh "echo value of my_value: #{my_value}"
 end
+
+my_value = 'set_from_outside_action'
 
 # simple scripts
 action :run_script do
