@@ -102,7 +102,7 @@ end
 require_relative './some_other_file.rb'
 
 
-# this will fail
+# this will fail without docker
 action :run_python do
   sh 'which python'
 end
@@ -119,5 +119,14 @@ end
 
 action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :run_python] do
   OpsChain.logger.info "this is multiple wait steps"
+end
+
+action :run_me_first do
+  OpsChain.logger.info "I am running first ..."
+end
+
+# runs run_me_first, :wait_step before it runs step prereqs, then runs multiple_wait_steps
+action prereqs: [:run_me_first, :wait_step], steps: [:multiple_wait_steps] do
+  OpsChain.logger.info "I will run after run_me_first and wait_step and then multiple_wait_steps will run"
 end
 
