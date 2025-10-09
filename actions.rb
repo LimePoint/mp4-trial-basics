@@ -8,6 +8,9 @@ action :run_multi_shell_commands_using_sh do
   sh 'whoami' # this will not run
 end
 
+action :print_users do
+  exec_command 'cat /etc/passwd'
+end
 
 new_value='new value'
 # simple shell commands
