@@ -4,7 +4,7 @@ action :run_multi_shell_commands do
 end
 
 action :run_multi_shell_commands_using_sh do
-  sh '/bin/false'
+  sh 'exit 1'
   sh 'whoami' # this will not run
 end
 
