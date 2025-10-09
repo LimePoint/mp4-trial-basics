@@ -1,5 +1,5 @@
 action :run_multi_shell_commands do
-  exec_command 'exit 1'
+  exec_command '/bin/false'
   exec_command 'whoami' # this will not run
 end
 
