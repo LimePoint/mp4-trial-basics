@@ -117,7 +117,7 @@ action :post_wait do
   OpsChain.logger.info "this will run after a wait step"
 end
 
-action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait] do
+action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :run_python] do
   OpsChain.logger.info "this is multiple wait steps"
 end
 
