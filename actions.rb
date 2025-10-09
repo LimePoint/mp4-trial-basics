@@ -95,5 +95,6 @@ require_relative './some_other_file.rb'
 # this will fail
 action :run_python do
   sh 'which python'
-  #sh 'python -V'
 end
+
+# install your tools via Dockerfile
