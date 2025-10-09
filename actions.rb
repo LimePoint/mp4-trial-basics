@@ -109,7 +109,7 @@ end
 
 # install your tools via Dockerfile
 
-action :wait_step, steps [OpsChain.wait_step, :post_wait] do
+action :wait_step, steps: [OpsChain.wait_step, :post_wait] do
   OpsChain.logger.info "This step is going to wait to be manually continuing before running post_wait action"
 end
 
