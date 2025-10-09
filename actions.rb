@@ -87,3 +87,6 @@ end
 action :grandparent_1, steps: [:parent_1, :parent_2] do
   OpsChain.logger.info "I am grand parent 1"
 end
+
+# separating actions in diff files
+require_relative './some_other_file.rb'
