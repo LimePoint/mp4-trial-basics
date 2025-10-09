@@ -113,5 +113,11 @@ action :wait_step, steps: [OpsChain.wait_step, :post_wait] do
   OpsChain.logger.info "This step is going to wait to be manually continuing before running post_wait action"
 end
 
+action :post_wait do
+  OpsChain.logger.info "this will run after a wait step"
+end
 
+action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait] do
+  OpsChain.logger.info "this is multiple wait steps"
+end
 
