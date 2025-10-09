@@ -3,6 +3,10 @@ action :run_multi_shell_commands do
   exec_command 'whoami' # this will not run
 end
 
+action :run_multi_shell_commands_using_sh do
+  sh '/bin/false'
+  sh 'whoami' # this will not run
+end
 
 
 new_value='new value'
