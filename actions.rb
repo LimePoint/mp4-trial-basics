@@ -19,7 +19,7 @@ action :calculate_ip do
 end
 
 action bringup_ip: [:calculate_ip] do # prereq style
-  puts "puts id: #{my_ip_addr}"
+  puts "puts id : #{my_ip_addr}"
 end
 
 
