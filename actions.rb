@@ -58,11 +58,24 @@ action :run_shell_with_output do
 end
 
 
-# chaining actions
 action 'string_action' do
   OpsChain.logger.info "this is a string action"
 end
 action :symbol_action do
   OpsChain.logger.info "this is a symbol action"
+end
+
+# action chaining
+#
+action :child_1 do
+  OpsChain.logger.info "I am child action 1"
+end
+
+action :child_2 do
+  OpsChain.logger.info "I am child action 2"
+end
+
+action :parent_1, steps: [:child_1, :child_2] do
+  OpsChain.logger.info "I am parent action 1 and will now call child_1 and child_2 one by one"
 end
 
