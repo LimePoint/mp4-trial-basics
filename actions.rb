@@ -12,6 +12,12 @@ action :print_users do
   exec_command 'cat /etc/passwd'
 end
 
+action :find_user do
+  user_name = 'root'
+  result = exec_command "cat /etc/passwd |grep #{user_name}"
+  OpsChain.logger.info "found user - #{result.stdout}"
+end
+
 new_value='new value'
 # simple shell commands
 action :run_shell_commands do
