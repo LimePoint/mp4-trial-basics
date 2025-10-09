@@ -1,3 +1,9 @@
+action :run_multi_shell_commands do
+  exec_command '/bin/false'
+  exec_command 'hostname' # this will not run
+end
+
+
 
 new_value='new value'
 # simple shell commands
