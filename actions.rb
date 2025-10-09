@@ -55,8 +55,14 @@ action :run_shell_with_output do
 
   # you can pass env variables
   r = exec_command 'echo $SOME_VAL', {'SOME_VAL' => 'ABC'}  # the second param is a map of variables
-
-
 end
 
+
+# chaining actions
+action 'string_action' do
+  OpsChain.logger.info "this is a string action"
+end
+action :symbol_action do
+  OpsChain.logger.info "this is a symbol action"
+end
 
