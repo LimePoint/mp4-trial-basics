@@ -79,3 +79,6 @@ action :parent_1, steps: [:child_1, :child_2] do
   OpsChain.logger.info "I am parent action 1 and will now call child_1 and child_2 one by one"
 end
 
+action :parent_2, steps: [:child_1, :child_2], run_as: parallel do
+  OpsChain.logger.info "I am parent action 2 and will now call child_1 and child_2 in parallel"
+end
