@@ -46,6 +46,6 @@ action :run_shell_with_output do
 #  OpsChain.logger.info "value of result error: #{result.stderr}"
 #  OpsChain.logger.info "did the command succeed: #{result.success?}" # result.failed?
 
-  r = exec_command 'echo $SOME_VAL', env: {'SOME_VAL' => 'ABC'}
+  r = exec_command 'echo $SOME_VAL', {'SOME_VAL' => 'ABC'}  # the second param is a map of variables
 end
 
