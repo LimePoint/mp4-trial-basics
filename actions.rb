@@ -41,11 +41,22 @@ end
 
 # result.status, result.stdout, result.stderr, 
 action :run_shell_with_output do
-#  result = exec_command 'whoami'
-#  OpsChain.logger.info "value of result: #{result.stdout}"
-#  OpsChain.logger.info "value of result error: #{result.stderr}"
-#  OpsChain.logger.info "did the command succeed: #{result.success?}" # result.failed?
+  result = exec_command 'whoami'
+  OpsChain.logger.info "value of result: #{result.stdout}"
+  OpsChain.logger.info "value of result error: #{result.stderr}"
+  OpsChain.logger.info "did the command succeed: #{result.success?}" # result.failed?
 
+  # You can use the output of commands to do anything in Ruby
+  if result == 'oracle'
+    OpsChain.logger.info 'user is oracle, will do something'
+  else
+    OpsChain.logger.info 'user is not oracle, will do something else'
+  end
+
+  # you can pass env variables
   r = exec_command 'echo $SOME_VAL', {'SOME_VAL' => 'ABC'}  # the second param is a map of variables
+
+
 end
+
 
