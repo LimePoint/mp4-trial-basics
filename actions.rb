@@ -84,6 +84,6 @@ action :parent_2, steps: [:child_1, :child_2], run_as: :parallel do
 end
 
 # complex chaining
-action :grandparent_1, steps: [parent_1, parent_2] do
+action :grandparent_1, steps: [:parent_1, :parent_2] do
   OpsChain.logger.info "I am grand parent 1"
 end
