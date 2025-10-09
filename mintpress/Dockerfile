@@ -1,9 +1,11 @@
+# syntax = docker/dockerfile:1.4
+
 ARG OPSCHAIN_BASE_RUNNER
 
-FROM scratch as repo
+FROM scratch AS repo
 ADD ./repo.tar .
 
-FROM scratch as trust_store
+FROM scratch AS trust_store
 ADD ./opschain-trust-store.tar .
 
 FROM ${OPSCHAIN_BASE_RUNNER}
