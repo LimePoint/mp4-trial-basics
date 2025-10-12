@@ -1,6 +1,7 @@
 action :run_multi_shell_commands do
   exec_command '/bin/true'
   exec_command 'whoami' # this will not run
+  exec_command '/bin/false' # this will not run
 end
 
 log.info "------------ shorter log"
