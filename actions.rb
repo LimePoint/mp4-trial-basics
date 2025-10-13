@@ -4,6 +4,17 @@ action :run_multi_shell_commands do
   exec_command 'whoami' # this will not run
 end
 
+action :run_shell_commands_output do
+  result = exec_command 'cat /etc/passwd'
+  if result.success?
+     puts "found the list of users: #{result.stdout}"
+  else
+     puts "did not find any users."
+  end
+end
+
+
+
 log.info "------------ shorter log"
 
 action :print_users do
