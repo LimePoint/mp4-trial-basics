@@ -21,6 +21,14 @@ action :print_variable_3 do
   puts "--------- Value of variable my_address: #{my_address}"
 end
 
+action :print_var do
+  puts "my name is print_var"
+end
+
+action :print_var do
+  puts "my name is print_var override"
+end
+
 
 #
 #
