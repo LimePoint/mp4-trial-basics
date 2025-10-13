@@ -103,9 +103,6 @@ action bringup_ip: [:calculate_ip] do # prereq style
   puts "puts id : #{my_ip_addr}"
 end
 
-action bringup_ip_2, steps: [bringup_ip] do 
-  puts "puts id : #{my_ip_addr}"
-end
 
 my_value = 'set_from_outside_action'
 
