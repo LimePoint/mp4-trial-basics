@@ -1,5 +1,5 @@
 my_name = 'foo'
-my_address = 'foo'
+#my_address = 'foo'
 
 action :print_variable do
   puts "--------- Value of variable my_name: #{my_name}"
@@ -7,6 +7,20 @@ action :print_variable do
 end
 
 my_address = 'bar'
+
+action :print_variable_1 do
+  puts "--------- Value of variable my_name: #{my_name}"
+  puts "--------- Value of variable my_address: #{my_address}"
+end
+
+my_address = 'newbar'
+
+action :print_variable_3 do
+  my_address = 'reset'
+  puts "--------- Value of variable my_name: #{my_name}"
+  puts "--------- Value of variable my_address: #{my_address}"
+end
+
 
 #
 #
@@ -89,6 +103,9 @@ action bringup_ip: [:calculate_ip] do # prereq style
   puts "puts id : #{my_ip_addr}"
 end
 
+action bringup_ip_2, steps: [bringup_ip] do 
+  puts "puts id : #{my_ip_addr}"
+end
 
 my_value = 'set_from_outside_action'
 
