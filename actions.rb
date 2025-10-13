@@ -5,13 +5,22 @@ action :run_multi_shell_commands do
 end
 
 action :run_shell_commands_output do
-  result = exec_command 'cat /etc/passwd1', abort_on_failure: false
+  result = exec_command 'cat /etc/passwd', live_stream: false
   if result.success?
      puts "found the list of users: #{result.stdout}"
   else
     puts "did not find any users, error was: #{result.stderr}"
   end
 end
+
+#action :run_shell_commands_output do
+#  result = exec_command 'cat /etc/passwd1', abort_on_failure: false
+#  if result.success?
+#     puts "found the list of users: #{result.stdout}"
+#  else
+#    puts "did not find any users, error was: #{result.stderr}"
+#  end
+#end
 
 
 
