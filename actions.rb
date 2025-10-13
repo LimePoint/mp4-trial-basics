@@ -1,5 +1,6 @@
 action :run_multi_shell_commands do
   exec_command '/tmp/script.sh' #, abort_on_failure: false
+  puts "I will never get printed"
   exec_command 'whoami' # this will not run
 end
 
