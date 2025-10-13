@@ -22,11 +22,13 @@ action :print_variable_3 do
 end
 
 action :print_var do
+  my_var = 'foo'
   puts "my name is print_var"
 end
 
 action :print_var do
   puts "my name is print_var override"
+  puts "my var is #{my_var}"
 end
 
 
