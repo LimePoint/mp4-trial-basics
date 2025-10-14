@@ -42,6 +42,7 @@ action :use_logging do
   log.warn "I am being printed via the logger as warn"
   log.error "I am being printed via the logger as error"
   log.debug "I am being printed via the logger as debug"
+  log.fatal "I am being printed via the logger as fatal"
 end
 
 
