@@ -195,6 +195,10 @@ end
 
 # action chaining
 #
+action :grandchild_1 do
+  OpsChain.logger.info "I am grand child action 1"
+end
+
 action :child_1 do
   OpsChain.logger.info "I am child action 1"
 end
@@ -203,7 +207,7 @@ action :child_2 do
   OpsChain.logger.info "I am child action 2"
 end
 
-action :parent_1, steps: [:child_1, :child_2] do
+action parent_1: [:grandchild_1], steps: [:child_1, :child_2] do
   OpsChain.logger.info "I am parent action 1 and will now call child_1 and child_2 one by one"
 end
 
