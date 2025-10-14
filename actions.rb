@@ -1,4 +1,4 @@
-action :print_hostname
+action :print_hostname do
   exec_command "cat /etc/hostname"
 end
 
