@@ -31,6 +31,10 @@ action :print_var do
   #puts "my var is #{my_var}"
 end
 
+action :find_errors do
+  put "I am missing an s and will error out"
+end
+
 
 #
 #
