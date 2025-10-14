@@ -256,3 +256,6 @@ action prereqs: [:run_me_first, :wait_step], steps: [:multiple_wait_steps] do
   OpsChain.logger.info "I will run after run_me_first and wait_step and then multiple_wait_steps will run"
 end
 
+action :run_python do
+  exec_command 'python scripts/sample.py'
+end
