@@ -36,7 +36,8 @@ action :find_errors do
 end
 
 action :use_logging do
-  puts "I am missing an s in the puts and will error out"
+  puts "Current log level - #{OpsChain.logger.level}"
+  puts "I am being printed via puts"
   log.info "I am being printed via the logger as info"
   log.warn "I am being printed via the logger as warn"
   log.error "I am being printed via the logger as error"
