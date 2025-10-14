@@ -3,7 +3,6 @@ action :print_cpus do
   cpu = output.stdout
   log.info "output from get_cpu - #{cpu}"
   result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
-  log.info "output from print_cpu.sh -------"
   log.info result.stdout
 end
 
@@ -161,10 +160,9 @@ my_value = 'set_from_outside_action'
 # action is called
 #
 action :run_any_ruby do
-  f = 'scripts/hello.sh'
+  f = 'files/list_of_names.txt'
   content = File.read(f)
-  puts "value of content from file #{f} is: \n #{content}"
-  OpsChain.logger.info("You can output log via logger too - #{content}")
+  log.info "Content of files - #{content}"
 end
 
 # working with output of commands
