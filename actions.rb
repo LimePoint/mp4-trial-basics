@@ -2,7 +2,9 @@ action :print_cpus do
   output = exec_command "bash scripts/get_cpu.sh"
   cpu = output.stdout
   log.info "output from get_cpu - #{cpu}"
-  exec_command "bash scripts/print_cpu.sh #{cpu}"
+  result = exec_command "bash scripts/print_cpu.sh #{cpu}"
+  log.info "output from print_cpu.sh -------"
+  log.info result.stdout
 end
 
 
