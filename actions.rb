@@ -1,3 +1,7 @@
+action :print_hostname
+  exec_command "cat /etc/hostname"
+end
+
 my_name = 'foo'
 #my_address = 'foo'
 
