@@ -225,9 +225,6 @@ require_relative './some_other_file.rb'
 
 
 # this will fail without docker
-action :run_python do
-  sh 'which python'
-end
 
 # install your tools via Dockerfile
 
