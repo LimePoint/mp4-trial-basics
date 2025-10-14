@@ -90,8 +90,6 @@ end
 
 
 
-log.info "------------ shorter log"
-
 action :print_users do
   exec_command 'cat /etc/passwd'
 end
@@ -134,11 +132,9 @@ action :run_script do
 end
 
 # Using logging - this will run before any actions (think of this as code in the recipe)
-OpsChain.logger.info("----------- logger info --------- ")
 
 my_value = 'set_from_outside_action'
 
-OpsChain.logger.info ("Value of my_value = #{my_value}")
 
 # we can write any ruby code here, it will just execute coz mint will just run the full file and ignore anything under the actions block unless the 
 # action is called
