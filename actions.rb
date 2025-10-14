@@ -43,6 +43,10 @@ action :use_logging do
   log.error "I am being printed via the logger as error"
 end
 
+log.info "I am info outside action"
+log.error "I am error outside action"
+
+
 
 
 #
