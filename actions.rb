@@ -35,6 +35,14 @@ action :find_errors do
   put "I am missing an s and will error out"
 end
 
+action :use_logging do
+  puts "I am missing an s in the puts and will error out"
+  log.info "I am being printed via the logger as info"
+  log.warn "I am being printed via the logger as warn"
+  log.error "I am being printed via the logger as error"
+end
+
+
 
 #
 #
