@@ -41,10 +41,9 @@ action :use_logging do
   log.info "I am being printed via the logger as info"
   log.warn "I am being printed via the logger as warn"
   log.error "I am being printed via the logger as error"
+  log.debug "I am being printed via the logger as debug"
 end
 
-log.info "I am info outside action"
-log.error "I am error outside action"
 
 
 
