@@ -1,7 +1,8 @@
 action :print_cpus do
   output = exec_command "bash scripts/get_cpu.sh"
-  log.info "output from get_cpu - #{output}"
-  exec_command "bash scripts/print_cpu.sh #{output}"
+  cpu = output.stdout
+  log.info "output from get_cpu - #{cpu}"
+  exec_command "bash scripts/print_cpu.sh #{cpu}"
 end
 
 
