@@ -268,5 +268,5 @@ action :pod_step_write, steps: [:pod_step_read] do
 end
 
 action :print_context do
-  OpsChain.context
+  puts OpsChain.context
 end
