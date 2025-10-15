@@ -256,3 +256,13 @@ end
 action :run_python do
   exec_command 'python scripts/sample.py'
 end
+
+action :pod_step_1 do
+  exec_command "echo 'I got created from pod_step_1' > /tmp/file1.txt"
+end
+
+action :pod_step_2, steps: [:pod_step_1] do
+  log.info "Trying to read file /tmp/file1.txt create in step 1"
+  data = File.read('/tmp/file1.txt')
+end
+
