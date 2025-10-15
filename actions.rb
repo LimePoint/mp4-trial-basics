@@ -263,7 +263,7 @@ action :pod_step_read do
 end
 
 action :pod_step_write, steps: [:pod_step_read] do
-  exec_command "echo 'I got created from pod_step_write' > /tmp/file1.txt"
+  File.write('/tmp/file1.txt', "something")
   exec_command "ls -lrth /tmp"
 end
 
