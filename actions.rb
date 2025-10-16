@@ -283,5 +283,5 @@ end
 action :kv_properties do
   log.info "Total number of employees: #{OpsChain.properties.organization.employees.length}"
   log.info "Value of env variable MY_VARIABLE: #{ENV['MY_VARIABLE']}"
-  log.info "Contents of file at /tmp/myfile.txt - #{File.read('/tmp/myfile.txt')"
+  log.info "Contents of file at /tmp/myfile.txt - #{File.read('/tmp/myfile.txt')}"
 end
