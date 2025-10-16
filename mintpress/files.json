@@ -1,9 +1,10 @@
 {
- "opschain": {
-   "files": {
-     "/tmp/myfile.txt": {
-       "mode": "0600",
-       "content": "contents in plain text"
-     }
+  "opschain": {
+    "files": {
+      "/tmp/myfile.txt": {
+        "mode": "0600",
+        "content": "contents in plain text"
+      }
+    }
+  }
 }
-
