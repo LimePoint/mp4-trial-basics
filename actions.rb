@@ -273,7 +273,7 @@ end
 
 
 action :cleanup_temp_files do
-  if OpsChain.context.parents.environment.code == 'dev1'
+  if OpsChain.context.parents.environment&.code == 'dev1'
     log.info 'Cleaning up temporary files'
   else
     log.info 'not cleaning anything as environment is not dev1'
