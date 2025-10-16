@@ -271,20 +271,11 @@ action :print_context do
   puts OpsChain.context.to_yaml
 end
 
-if OpsChain.context.parents.environment.code == 'dev1'
-  action :cleanup_temp_files do
+
+action :cleanup_temp_files do
+  if OpsChain.context.parents.environment.code == 'dev1'
     log.info 'Cleaning up temporary files'
+  else
+    log.info 'not cleaning anything as environment is not dev1'
   end
-else
-   log.info 'Not running anything as environment is not dev1'
 end
-
-
-#action :cleanup_temp_files do
-#  puts OpsChain.context.to_yaml
-#  if OpsChain.context.parents.environment == 'dev1'
-#    log.info 'Cleaning up temporary files'
-#  else
-#    log.info 'not cleaning anything as environment is not dev1'
-#  end
-#end
