@@ -281,6 +281,7 @@ end
 
 
 action :cleanup_temp_files do
+  puts OpsChain.context.to_yaml
   if OpsChain.context.parents.environment == 'dev1'
     log.info 'Cleaning up temporary files'
   else
