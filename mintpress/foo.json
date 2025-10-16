@@ -1,0 +1,8 @@
+{
+"organization": {
+ "employees":[
+  { "name": "foo",
+     "phone": 234
+  }
+ ]
+}
