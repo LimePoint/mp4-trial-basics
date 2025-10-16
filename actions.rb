@@ -270,3 +270,12 @@ end
 action :print_context do
   puts OpsChain.context.to_yaml
 end
+
+if OpsChain.context.environment == 'dev1'
+  action :cleanup_temp_files do
+    log.info 'Cleaning up temporary files'
+  end
+else
+   log.info 'Not running anything as environment is not dev1'
+end
+
