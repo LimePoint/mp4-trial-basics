@@ -287,3 +287,7 @@ action :kv_properties do
   log.info "Value of env variable MY_VARIABLE: #{ENV['MY_VARIABLE']}"
   #log.info "Contents of file at /tmp/myfile.txt - #{File.read('/tmp/myfile.txt')}"
 end
+
+action :file_properties do
+  log.info "Contents of file at /tmp/file1.txt - #{File.read('/tmp/file1.txt')}"
+end
