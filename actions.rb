@@ -281,11 +281,7 @@ action :cleanup_temp_files do
 end
 
 action :kv_properties do
-  log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
   log.info "First employee: #{OpsChain.properties.organization.employees[0].name}"
-  #log.info "Total number of employees: #{OpsChain.properties.organization.employees.length}"
-  log.info "Value of env variable MY_VARIABLE: #{ENV['MY_VARIABLE']}"
-  #log.info "Contents of file at /tmp/myfile.txt - #{File.read('/tmp/myfile.txt')}"
 end
 
 action :file_properties do
