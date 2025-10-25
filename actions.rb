@@ -283,6 +283,7 @@ end
 action :kv_properties do
   log.info "First employee: #{OpsChain.properties.organization.employees[0].name}"
   log.info "I have been updated"
+  log.info "I have changed..."
 end
 
 action :file_properties do
