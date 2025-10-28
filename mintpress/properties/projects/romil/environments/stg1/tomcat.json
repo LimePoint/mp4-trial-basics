@@ -1,0 +1,6 @@
+{
+ "tomcat": {
+   "minimum_memory": "4GB"
+  }
+}
+
