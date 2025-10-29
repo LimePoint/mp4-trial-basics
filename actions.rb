@@ -1,5 +1,5 @@
 action :get_cpu do
-  result = exec_command './get_cpu.sh', live_stream: false
+  result = exec_command './get_cpu.sh'
   if result.success?
      puts "found the list of users: #{result.stdout}"
   else
