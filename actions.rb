@@ -138,5 +138,5 @@ action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wa
 end
 
 action :run_python do
-  exec_command 'python scripts/sample.py'
+  exec_command 'bash python scripts/sample.py'
 end
