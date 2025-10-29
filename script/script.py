@@ -1,3 +1,2 @@
-action :run_python do
-  exec_command 'python scripts/sample.py'
-end
+--- cat scripts/sample.py 
+print("this is from python")  end
