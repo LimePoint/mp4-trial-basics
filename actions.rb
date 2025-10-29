@@ -75,7 +75,8 @@ action :run_shell_commands_ex1 do
   result = exec_command 'scripts/get_cpu.sh', live_stream: false
   if result.success?
      puts "found the list of users: #{result.stdout}"
-     result1 = exec_command 'scripts/print_cpu.sh', result1.stdout
+     result1 = exec_command 'scripts/print_cpu.sh', live_stream: false
+     puts "found the details of users: #{result1.stdout}"
   else
      puts "did not find any users, error was: #{result.stderr}"
   end
