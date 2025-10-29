@@ -1,3 +1,7 @@
-action :find_errors do
-  put "I am missing an s in the puts and will error out"
-end
+action :print_cpus do                                                                                                                             
+  output = exec_command "bash scripts/get_cpu.sh", live_stream: false
+  cpu = output.stdout
+  log.info "output from get_cpu - #{cpu}"
+  result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
+  log.info result.stdout
+end 
