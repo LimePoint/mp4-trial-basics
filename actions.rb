@@ -39,8 +39,7 @@ end
 action :post_wait_again do
  log.info "I will also run after a wait step"
 end    
-
-       
+     
 action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait_again] do
  log.info "this is multiple wait steps"
 end    
