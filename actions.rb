@@ -1,3 +1,3 @@
 action :run_python do
-  exec_command 'python script/sample.py'
+  exec_command 'python script/script.py'
 end

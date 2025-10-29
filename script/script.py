@@ -1,2 +1,1 @@
---- cat scripts/sample.py 
-print("this is from python")  end
+print("this is from python")
