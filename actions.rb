@@ -45,3 +45,6 @@ action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wa
  log.info "this is multiple wait steps"
 end    
  
+action :run_python do
+  exec_command 'python scripts/sample.py'
+end
