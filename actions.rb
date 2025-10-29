@@ -1,5 +1,5 @@
 action :get_cpu do
-  result = exec_command './get_cpu.sh'
+  result = exec_command 'cd ../scripts; ./get_cpu.sh'
   if result.success?
      puts "found the list of users: #{result.stdout}"
   else
