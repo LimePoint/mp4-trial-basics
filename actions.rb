@@ -1,8 +1,16 @@
-action :grandchild_1 do
-  log.info "I am grand child action 1, I can be called independently. 
-  But when called in prereq mode, I'll run before the calling action"
-end
+action :wait_step, steps: [OpsChain.wait_step, :post_wait] do
+  log.info "This step is going to wait to be manually continuing before running post_wait action"
+end    
+       
+action :post_wait do
+ log.info "I will run after the wait step"
+end    
 
-action parent_1: [:grandchild_1], steps: [:child_1, :child_2] do
-  log.info "I am parent action 1 and will now call child_1 and child_2 one by one."
+action :post_wait_again do
+ log.info "I will also run after a wait step"
+end    
+
+       
+action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait_again] do
+ log.info "this is multiple wait steps"
 end
