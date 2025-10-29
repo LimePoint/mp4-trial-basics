@@ -25,7 +25,7 @@ action :run_shell_commands_4 do
   exec_command 'whoami' # this will run as the previous command result do not matter
 end
 
-action :run_shell_commands do
+action :run_shell_commands_5 do
   result = exec_command 'cat /etc/passwd'
   if result.success?
      puts "found the list of users: #{result.stdout}"
