@@ -1,5 +1,3 @@
-# syntax = docker/dockerfile:1.4
-
 ARG OPSCHAIN_BASE_RUNNER
 
 FROM scratch AS repo
@@ -31,5 +29,5 @@ USER opschain
 RUN --mount=type=secret,required=true,id=env_context_zip,uid=10001,gid=10001,target=/opt/opschain/.mintpress/step_context.json.zip \
     --mount=type=secret,required=false,id=mintpress_license,uid=10001,gid=10001,target=/opt/opschain/.environmint/mintpress.license \
     bundle_and_lint.sh
-### ----
+
  
