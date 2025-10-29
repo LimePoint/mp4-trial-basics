@@ -6,6 +6,10 @@ action 'hello_world_string' do
   puts "Hello world from MintPress"
 end
 action :run_shell_commands do
-  exec_command '/bin/false', abort_on_failure: false
-  exec_command 'whoami' # this will run as the previous command result do not matter
+  result = exec_command 'cat /etc/passwd'
+  if result.success?
+     puts "found the list of users: #{result.stdout}"
+  else
+     puts "did not find any users."
+  end
 end
