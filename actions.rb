@@ -7,5 +7,5 @@ action 'hello_world_string' do
 end
 
 action :find_errors do
-  put "I am missing an s in the puts and will error out"
+  puts "I am missing an s in the puts and will error out"
 end
