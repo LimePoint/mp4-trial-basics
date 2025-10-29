@@ -70,3 +70,13 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"                                                                                          
   log.debug "I am being printed via the logger as debug"
 end
+
+action :run_shell_commands_ex1 do
+  result = exec_command 'scripts/get_cpu.sh', live_stream: false
+  if result.success?
+     puts "found the list of users: #{result.stdout}"
+     exec_command 'scripts/print_cpu.sh', result.stdout
+  else
+     puts "did not find any users, error was: #{result.stderr}"
+  end
+end
