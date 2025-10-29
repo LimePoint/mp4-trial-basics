@@ -1,84 +1,20 @@
-#action :hello_world do
-#  puts "Hello world from MintPress"
-#end
-#
-#action :hello_world do
-#  puts "Hello world from MintPress"
+#action :child_1 do
+#  log.info "I am child action 1, I can be called independently"
 #end
 
-#action 'hello_world_string' do
-#  puts "Hello world from MintPress"
+#action :child_2 do
+#  log.info "I am child action 2, I can be called independently"
 #end
 
-#action :run_shell_commands do
-#  exec_command 'whoami'
-#end
-#
-#action :run_shell_commands do
-#  exec_command 'whoami'
-#  exec_command 'meminfo'
-#end
-
-#action :run_shell_commands do
-#  exec_command '/bin/false'
-#  exec_command 'whoami' # this will not run as the previous command will fail
-#end
-#
-##action :run_shell_commands do
-#  exec_command '/bin/false', abort_on_failure: false
-#  exec_command 'whoami' # this will run as the previous command result do not matter
-#end
-#
-#action :run_shell_commands do
-#  result = exec_command 'cat /etc/passwd'
-#  if result.success?
- #    puts "found the list of users: #{result.stdout}"
-  #else
-   #  puts "did not find any users."
-  #end
-#end
-#
-#
-#action :run_shell_commands do
-#  result = exec_command 'cat /etc/passwd', live_stream: false
-#  if result.success?
-#     puts "found the list of users: #{result.stdout}"
-#  else
-#     puts "did not find any users, error was: #{result.stderr}"
-#  end
-#end
-#
-
-#my_name = 'foo'
-
-#action :print_variable_1 do
-#  puts "--------- Value of variable my_name: #{my_name}"
-#  puts "--------- Value of variable my_address: #{my_address}"
-#end
-
-#my_address = 'bar'
-
-#action :print_variable_2 do
-#  puts "--------- Value of variable my_name: #{my_name}"
-#  puts "--------- Value of variable my_address: #{my_address}"
-#end
-#
-#
-#
-my_name = 'foo'
-my_address = 'foo'
-
-action :print_variable do
-  puts "--------- Value of variable my_name: #{my_name}"
-  puts "--------- Value of variable my_address: #{my_address}"
+action :parent_1, steps: [:child_1, :child_2] do
+  log.info "I am parent action 1 and will now call child_1 and child_2 one by one"
 end
 
-#my_address = 'bar'
-
-#action :print_variable_3 do
-#  my_address = 'reset'
-#  puts "--------- Value of variable my_name: #{my_name}"
-#  puts "--------- Value of variable my_address: #{my_address}"
+#action :parent_2, steps: [:child_1, :child_2], run_as: :parallel do
+#  log.info "I am parent action 1 and will now call child_1 and child_2 in parallel."
 #end
 
-
+# complex chaining
+#action :grandparent_1, steps: [:parent_1, :parent_2] do
+#  log.info "I am grandparent 1"
+#end
