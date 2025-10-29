@@ -1,3 +1,3 @@
 action :hello_world do
-  puts "Hello world from MintPress"
+  puts "Hello world from Shaneem!"
 end
