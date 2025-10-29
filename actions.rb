@@ -1,4 +1,3 @@
-action :use_logging do                                 
-        cpu_count=$(grep -c '^processor' /proc/cpuinfo)
-        echo "$cpu_count" 
+action :child_1 do
+    log.info "I am child action 1, I can be called independently"
   end
