@@ -77,5 +77,5 @@ action :print_variable do
   end 
 
   action : script_call do
-	exec_command scripts/get_cpu.sh
+	exec_command "bash scripts/get_cpu.sh"
   end
