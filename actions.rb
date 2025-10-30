@@ -2,12 +2,10 @@ action :run_shell_commands do
     exec_command 'whoami'
   end
 
- 
   action :run_shell_commands_2 do
     exec_command 'whoami'
-    exec_command 'meminfo'
+    exec_command 'cat /proc/meminfo'
   end
-   
    
    
   action :run_shell_commands_3 do
