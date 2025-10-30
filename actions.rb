@@ -76,6 +76,6 @@ action :print_variable do
 	log.debug "I am being printed via the logger as debug"
   end 
 
-  action : script_call do
+  action :script_call do
 	exec_command "bash scripts/get_cpu.sh"
   end
