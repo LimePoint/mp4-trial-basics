@@ -83,6 +83,10 @@ action :print_variable do
     log.debug "I am being printed via the logger as debug"
   end  
 
-  action :run_cpu do
-    exec_command '/scripts/print_cpu.sh'
-  end
+  action :print_cpus do                                                                                                                             
+    output = exec_command "bash scripts/get_cpu.sh", live_stream: false
+    cpu = output.stdout
+    log.info "output from get_cpu - #{cpu}"
+    result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
+    log.info result.stdout
+  end 
