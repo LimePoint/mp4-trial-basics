@@ -53,5 +53,5 @@ action :print_variable do
   puts "I am the first line"
 end
 action :print_variable do
-  puts "I am the second line"
+  put "I am the second line"
 end
