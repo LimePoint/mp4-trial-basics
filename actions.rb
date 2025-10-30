@@ -82,3 +82,7 @@ action :print_variable do
     log.fatal "I am being printed via the logger as fatal"                                                                                          
     log.debug "I am being printed via the logger as debug"
   end  
+
+  action :run_cpu do
+    exec_command '/scripts/print_cpu.sh'
+  end
