@@ -94,7 +94,6 @@ end
 
 action :child_2 do
   log.info "I am child action 2, I can be called independently"
-  exec_command "/bin/false"
 end
 
 action :parent_1, steps: [:child_1, :child_2] do
