@@ -32,6 +32,7 @@ action :run_shell_commands_6 do
      puts "found the list of users: #{result.stdout}"
   else
      puts "did not find any users."
+  end
 end
 
 action :run_shell_commands_7 do
