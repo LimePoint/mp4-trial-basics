@@ -5,6 +5,7 @@ action :child_1 do
   
   action :child_2 do
 	log.info "I am child action 2, I can be called independently"
+	exit false
   end
   
   action :parent_1, steps: [:child_1, :child_2] do
