@@ -116,7 +116,7 @@ action :grandchild_1 do
 end
 
 action parent_3: [:grandchild_1], steps: [:child_1, :child_2] do
-  log.info "I am parent action 1 and will now call child_1 and child_2 one by one."
+  log.info "I am parent action 3 and will now call child_1 and child_2 one by one."
 end
 
 action :wait_step, steps: [OpsChain.wait_step, :post_wait] do
