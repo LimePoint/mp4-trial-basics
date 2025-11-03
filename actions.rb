@@ -48,3 +48,7 @@ action :child_1 do
   action :script_call do
 	exec_command "bash scripts/get_cpu.sh"
   end
+
+  action :run_python do
+    exec_command 'python scripts/sample.py'
+  end
