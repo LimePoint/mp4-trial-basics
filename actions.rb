@@ -139,3 +139,8 @@ end
 action :run_python do
   exec_command 'python scripts/sample.py'
 end
+
+action :print_context do
+  puts OpsChain.context.to_yaml
+end 
+ 
