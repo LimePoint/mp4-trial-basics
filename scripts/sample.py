@@ -1,1 +1,1 @@
-print("Hello")
+print("Hello, this is the sample.py")
