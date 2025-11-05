@@ -100,7 +100,7 @@ action :use_logging do
 end
 
 action :get_cpu do
-  exec_command '/c/Users/M061618/mp4-trial-basics/get_cpu.sh'
+  exec_command 'get_cpu.sh'
 end
 
 action :print_cpu do
