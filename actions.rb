@@ -124,7 +124,7 @@ action :passVariable1 do
   exec_command ' chmod +x scripts/print_cpu.sh'
   result = exec_command 'scripts/get_cpu.sh'
   if result.success?
-    exec_command 'scripts/print_cpu.sh result'
+    exec_command 'scripts/print_cpu.sh #{result}'
  else
     puts "Did not find result"
  end
