@@ -121,8 +121,8 @@ end
 
 action :passVariable1 do
   exec_command 'chmod +x scripts/get_cpu.sh'
-  exec_command 'chmod +x scripts/get_cpu.sh'
-  result = exec_command 'scripts/print_cpu.sh'
+  exec_command 'chmod +x scripts/print_cpu.sh'
+  result = exec_command 'scripts/get_cpu.sh'
   if result.success?
     cpuno = result.stdout
     log.info "I am being printed via the logger as info #{cpuno}" 
