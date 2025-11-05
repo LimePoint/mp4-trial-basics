@@ -1,10 +1,10 @@
 {
- "organization": {
- "employees": [
- {
- "name": "foo",
- "phone": 234
- }
- ]
- }
+    "organization": {
+        "employees": [
+            {
+                "name": "foo",
+                "phone": 234
+            }
+        ]
+    }
 }
