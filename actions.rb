@@ -119,7 +119,7 @@ action :use_logging2 do
   log.debug "I am being printed via the logger as debug"
 end
 
-action : do
+action :passVariable1 do
   result = exec_command 'scripts/get_cpu.sh'
   if result.success?
     exec_command 'scripts/print_cpu.sh result'
