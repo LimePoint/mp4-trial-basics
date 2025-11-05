@@ -12,6 +12,6 @@ end
 
 action :run_shell_commands_3 do
   exec_command '/bin/false'
-  exec
+  exec_command 'whoami'
 end
  
