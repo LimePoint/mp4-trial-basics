@@ -102,5 +102,6 @@ end
 action :get_cpu do
   result = exec_command 'bash get_cpu.sh'
   exec_command "bash print_cpu.sh #{result}"
+   log.info "Testing"
 end
 
