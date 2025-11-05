@@ -98,3 +98,11 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"
   log.debug "I am being printed via the logger as debug"
 end
+
+action :get_cpu do
+  exec_command 'get_cpu.sh'
+end
+
+action :print_cpu do
+  exec_command 
+end
