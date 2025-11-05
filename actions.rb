@@ -73,6 +73,16 @@ action :print_variable_3 do
   puts "--------- Value of variable my_name: #{my_name}"
   puts "--------- Value of variable my_address: #{my_address}"
 end
+
+action :print_variable do
+  puts "I am the first line"
+end
+
+
+action :print_variable do
+  puts "I am the second line"
+end
+ 
  
  
  
