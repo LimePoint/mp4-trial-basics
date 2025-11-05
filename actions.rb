@@ -100,7 +100,8 @@ action :use_logging do
 end
 
 action :get_cpu do
-  exec_command 'get_cpu.sh'
+  result = exec_command 'bash get_cpu.sh'
+  return result
 end
 
 action :print_cpu do
