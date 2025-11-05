@@ -211,6 +211,7 @@ action :run_python do
  end 
 
  action :cleanup_temp_files do 
+  log.info "envioronment #{OpsChain.context.parents.environment}"
   if OpsChain.context.parents.environment.code == 'dev1' 
   log.info 'Cleaning up temporary files' 
   else 
