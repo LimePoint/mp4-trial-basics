@@ -218,6 +218,10 @@ action :run_python do
   log.info 'not cleaning anything as environment is not dev1'
   end 
  end
+
+ action :kv_properties do 
+  log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
+ end
  
  
 
