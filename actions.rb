@@ -187,6 +187,14 @@ end
 action :run_python do
   exec_command 'python scripts/sample.py'
  end
+
+ action :download_rates_file do
+  exec_command 'curl https://foo.com/rates.json -o rates.json'
+ end
+ 
+ action :update_rates, steps: [:download_rates] do
+  exec_command 'curl -X POST -d @rates.json'
+ end
  
  
 
