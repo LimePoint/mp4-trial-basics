@@ -227,6 +227,10 @@ action :run_python do
   log.info "First employee: 
  #{OpsChain.properties.organization.employees[0].name}" 
  end
+
+ action :file_properties do
+  log.info "Contents of file at /tmp/file1.txt - #{File.read('/tmp/file1.txt')}"
+ end
  
  
  
