@@ -125,7 +125,8 @@ action :passVariable1 do
   result = exec_command 'scripts/get_cpu.sh'
   if result.success?
     cpuno = ${result.stdout}
-    exec_command 'scripts/print_cpu.sh $cpuno'
+    log.info "I am being printed via the logger as info #{cpuno}" 
+    exec_command 'scripts/print_cpu.sh #cpuno'
  else
     puts "Did not find result"
  end
