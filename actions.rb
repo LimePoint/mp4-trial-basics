@@ -106,7 +106,18 @@ action :use_logging1 do
   log.error "I am being printed via the logger as error"
   log.fatal "I am being printed via the logger as fatal"                                                                                          
   log.debug "I am being printed via the logger as debug"
-end 
+end
+
+action :use_logging2 do 
+  log.level = ::Logger::DEBUG                                
+  puts "Current log level - #{log.level}"      
+  puts "I am being printed via puts"              
+  log.info "I am being printed via the logger as info" 
+  log.warn "I am being printed via the logger as warn" 
+  log.error "I am being printed via the logger as error"
+  log.fatal "I am being printed via the logger as fatal"                                                                                          
+  log.debug "I am being printed via the logger as debug"
+end
  
  
  
