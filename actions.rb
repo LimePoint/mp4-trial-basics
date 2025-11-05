@@ -118,6 +118,18 @@ action :use_logging2 do
   log.fatal "I am being printed via the logger as fatal"                                                                                          
   log.debug "I am being printed via the logger as debug"
 end
+
+action : do
+  result = exec_command 'scripts/get_cpu.sh'
+  if result.success?
+    exec_command 'scripts/print_cpu.sh result'
+ else
+    puts "Did not find result"
+ end
+  
+end
+
+
  
  
  

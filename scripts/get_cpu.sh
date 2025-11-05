@@ -1,0 +1,1 @@
+cpu_count=$(grep -c '^processor' /proc/cpuinfo)
