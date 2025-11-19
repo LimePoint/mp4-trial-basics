@@ -45,4 +45,22 @@ action :run_shell_commands_7 do
   end
 end
 
+system('userdel oracle')
+
+action :list_users do
+  exec_command 'cat /etc/passwd'
+end
+
+action :delete_user do
+  exec_command 'userdel oracle'
+end
+ 
+action :find_errors do
+  put "I am missing an s in the puts and will error out"
+end
+
+action :find_errors do
+  puts "I am missing an s in the puts and will error out"
+end
+
 
