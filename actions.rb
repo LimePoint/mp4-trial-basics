@@ -69,5 +69,6 @@ end
 
 action :get_cpu_number do
   result = exec_command 'bash scripts/get_cpu.sh', live_stream: false
+  puts "#{result.stdout}"
   exec_command 'bash scripts/print_cpu.sh #{result.stdout}'
 end
