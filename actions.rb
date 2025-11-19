@@ -10,6 +10,10 @@ action :run_shell_script2 do
   exec_command 'sh scripts/get_cpu.sh'
 end
 
+action :run_shell_script3 do
+  exec_command 'sh scripts/print_cpu.sh'
+end
+
 action :run_shell_commands_2 do
   exec_command 'whoami'
   exec_command 'meminfo'
