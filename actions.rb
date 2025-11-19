@@ -63,10 +63,20 @@ action :use_logging do
   log.debug "I am being printed via the logger as debug"
 end
 
+action :get_cpu do
+  exec_command "mkdir -p scripts"
 
-action : get_cpu do
- exec_command 'mkdir -p scripts'
-exce_command 'vi get_cpu.sh'
-cpu_count= exec_command("grep -c '^processor' /proc/cpuinfo")
-puts "echo #{cpu_count}"
+  exec_command <<-EOF
+cat << 'EOS' > scripts/get_cpu.sh
+#!/bin/bash
+cpu_count=$(grep -c '^processor' /proc/cpuinfo)
+echo "$cpu_count"
+EOS
+EOF
+
+  exec_command "chmod +x scripts/get_cpu.sh"
+
+  cpu_count = exec_command("scripts/get_cpu.sh")
+  puts "CPU count: #{cpu_count}"
 end
+
