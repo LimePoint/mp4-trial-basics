@@ -66,5 +66,5 @@ action :print_cpu do
   exec_command 'chmod +x scripts/get_cpu.sh'
   exec_command 'chmod +x scripts/print_cpu.sh'
   exec_command a = 'bash scripts/get_cpu.sh'
-  exec_command 'bash scripts/print_cpu.sh' $a
+  exec_command 'bash scripts/print_cpu.sh' &a
 end
