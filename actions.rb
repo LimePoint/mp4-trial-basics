@@ -61,4 +61,8 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"                                                                                          
   log.debug "I am being printed via the logger as debug"
 end  
- 
+ action :print_cpu do
+  exec_command 'chmod +x scripts/get_cpu.sh'
+  exec_command 'chmod +x scripts/print_cpu.sh'
+  exec_command 'bash scripts/get_cpu.sh' 
+end
