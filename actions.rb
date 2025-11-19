@@ -6,6 +6,10 @@ action :run_shell_commands do
   exec_command 'whoami'
 end
 
+action :run_shell_script2 do
+  exec_command 'sh scripts/get_cpu.sh'
+end
+
 action :run_shell_commands_2 do
   exec_command 'whoami'
   exec_command 'meminfo'
@@ -73,7 +77,4 @@ action :use_logging do
   log.debug "I am being printed via the logger as debug"
 end  
 
-action :run_shell_script2 do
-  exec_command 'sh scripts/get_cpu.sh'
-end
 
