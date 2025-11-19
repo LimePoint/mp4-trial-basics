@@ -62,3 +62,9 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"
   log.debug "I am being printed via the logger as debug"
 end
+
+action :get_cpu do
+ exec_command 'mkdir -p scripts'
+exce_command 'vi get_cpu.sh'
+cpu_count= exec_command '$(grep -c '^processor' /proc/cpuinfo)'
+puts "echo "$cpu_count""
