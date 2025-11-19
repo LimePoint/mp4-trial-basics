@@ -62,9 +62,19 @@ action :use_logging do
   log.debug "I am being printed via the logger as debug"
 end  
 
-action :print_cpu do
+action :print_cpu_k do
   exec_command 'chmod +x scripts/get_cpu.sh'
   exec_command 'chmod +x scripts/print_cpu.sh'
   exec_command a = 'bash scripts/get_cpu.sh'
   exec_command 'bash scripts/print_cpu.sh' a
 end
+
+
+action :print_cpus do                                                                                                                             
+  output = exec_command "bash scripts/get_cpu.sh", live_stream: false
+  cpu = output.stdout
+  log.info "output from get_cpu - #{cpu}"
+  result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
+  log.info result.stdout
+end 
+ 
