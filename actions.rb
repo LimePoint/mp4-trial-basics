@@ -68,6 +68,6 @@ action :use_logging do
 end
 
 action :get_cpu_number do
-  result = exec_command 'scripts/get_cpu.sh', live_stream: false
-  exec_command 'scripts/print_cpu.sh #{result.stdout}'
+  result = exec_command 'bash scripts/get_cpu.sh', live_stream: false
+  exec_command 'bash scripts/print_cpu.sh #{result.stdout}'
 end
