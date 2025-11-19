@@ -52,3 +52,7 @@ end
 action :delete_user do
   exec_command 'userdel oracle'
 end
+
+action :find_errors do
+  put "I am missing an s in the puts and will error out"
+end
