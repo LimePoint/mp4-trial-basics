@@ -42,14 +42,8 @@ action :run_shell_commands_7 do
   end
 end
 
-system('userdel mintpress')
-
 action :list_users do
   exec_command 'cat /etc/passwd'
-end
-
-action :delete_user do
-  exec_command 'userdel oracle'
 end
 
 action :find_errors do
