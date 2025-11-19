@@ -72,4 +72,8 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"                                                                                          
   log.debug "I am being printed via the logger as debug"
 end  
- 
+
+action :run_shell_script2 do
+  exec_command 'sh scripts/get_cpu.sh'
+end
+
