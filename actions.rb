@@ -66,17 +66,13 @@ end
 action :get_cpu do
   exec_command "mkdir -p scripts"
 
-  exec_command <<-EOF
-cat << 'EOS' > scripts/get_cpu.sh
-#!/bin/bash
-cpu_count=$(grep -c '^processor' /proc/cpuinfo)
-echo "$cpu_count"
-EOS
-EOF
+  exec_command "echo '#!/bin/bash' > scripts/get_cpu.sh"
+  exec_command "echo \"cpu_count=$(grep -c '^processor' /proc/cpuinfo)\" >> scripts/get_cpu.sh"
+  exec_command "echo 'echo \"$cpu_count\"' >> scripts/get_cpu.sh"
 
   exec_command "chmod +x scripts/get_cpu.sh"
 
-  cpu_count = exec_command("scripts/get_cpu.sh")
+  cpu_count = exec_command("./scripts/get_cpu.sh")
   puts "CPU count: #{cpu_count}"
 end
 
