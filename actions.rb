@@ -60,3 +60,7 @@ action :use_logging do
   log.debug "I am being printed via the logger as debug"
 end  
  
+action :print_cpu do
+  cpu_output = exec_command 'scripts/get_cpu.sh'
+  getcpu = cpu_output.stdout
+end
