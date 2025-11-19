@@ -61,6 +61,7 @@ action :use_logging do
 end  
  
 action :print_cpu do
-  cpu_output = exec_command 'scripts/get_cpu.sh'
+  cpu_output = exec_command "bash scripts/get_cpu.sh"
   getcpu = cpu_output.stdout
+  log_info "cpu details - #{getcpu}"
 end
