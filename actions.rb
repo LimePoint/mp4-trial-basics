@@ -76,16 +76,10 @@ action :get_cpu do
   puts "CPU count: #{cpu_count}"
 end
 
-action :print_cpus do
-  exec_command "mkdir -p scripts"
-
-  exec_command "echo '#!/bin/sh' > scripts/get_cpu.sh"
-  exec_command "echo \"cpu_count=$(grep -c '^processor' /proc/cpuinfo)\" >> scripts/get_cpu.sh"
-  exec_command "echo 'echo \"$cpu_count\"' >> scripts/get_cpu.sh"
-
-  exec_command "chmod +x scripts/get_cpu.sh"
-
-  cpu_count = exec_command("sh ./scripts/get_cpu.sh")
-  puts "CPU count: #{cpu_count}"
-end
-
+action :print_cpus do                                                                                                                             
+  output = exec_command "bash scripts/get_cpu.sh", live_stream: false
+  cpu = output.stdout
+  log.info "output from get_cpu - #{cpu}"
+  result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
+  log.info result.stdout
+end 
