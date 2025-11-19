@@ -66,3 +66,8 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"
   log.debug "I am being printed via the logger as debug"
 end
+
+action :get_cpu_number do
+  result = exec_command 'scripts/get_cpu.sh', live_stream: false
+  exec_command 'scripts/print_cpu.sh #{result.stdout}'
+end
