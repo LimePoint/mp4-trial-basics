@@ -8,4 +8,8 @@ action :print_names, description: 'prints names from a file' do
  action :print_all_names, description: 'prints all names', steps: [:print_names, :print_names_without_gui] do 
   exec_command 'cat files/list_of_names.txt'
  end
+
+ action :print_names_again, description: 'prints again' do                                                          
+  log.info "again printing name"
+end
  
