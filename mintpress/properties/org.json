@@ -5,18 +5,7 @@
         "mode": "0600",
         "content": "contents of the file"
       }
-    }
-  }
-  "organization": {
-    "employees": [
-      {
-        "name": "foo",
-        "phone": 234
-      }
-    ]
-  }
-
-  "opschain": {
+    },
     "env": {
       "MY_VARIABLE": "my_value",
       "ANOTHER_VARIABLE": "different value"
