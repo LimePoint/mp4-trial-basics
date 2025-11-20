@@ -11,3 +11,8 @@ action :print_all_names, description: 'prints all names', steps: [:print_names, 
   exec_command 'cat files/list_of_names.txt'
 end
  
+
+action :print_names_again, description: 'prints again' do                                                          
+  log.info "again printing name"
+end
+ 
