@@ -8,4 +8,17 @@
     ]
   }
 }
- 
+{
+  "opschain": {
+    "files": {
+      "/tmp/file1.txt": {
+        "mode": "0600",
+        "content": "contents of the file"
+      }
+    },
+    "env": {
+      "MY_VARIABLE": "my_value",
+      "ANOTHER_VARIABLE": "different value"
+    }
+  }
+} 
