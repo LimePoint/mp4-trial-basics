@@ -10,3 +10,14 @@ end
 action :print_all_names, description: 'prints all names', steps: [:print_names, :print_names_without_gui] do                                                          
   exec_command 'cat files/list_of_names.txt'
 end
+
+action :child_1 do
+    log.info "I am child action 1, I can be called independently"
+end
+action :child_2 do
+    log.info "I am child action 2, I can be called independently"
+end
+
+action :print_all_names_parallel, description: 'prints all names in parallel', steps: [:print_names, :print_names_without_gui], run_as: :parallel do                                                          
+  exec_command 'cat files/list_of_names.txt'
+end
