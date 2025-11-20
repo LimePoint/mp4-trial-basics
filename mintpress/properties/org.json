@@ -1,15 +1,4 @@
 {
-  "organization": {
-    "employees": [
-      {
-        "name": "foo",
-        "phone": 234
-      }
-    ]
-  }
-}
-
-{
   "opschain": {
     "files": {
       "/tmp/file1.txt": {
@@ -19,3 +8,4 @@
     }
   }
 }
+
