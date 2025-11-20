@@ -14,4 +14,8 @@ end
 action :print_names_again, description: 'prints again' do                                                          
   log.info "again printing name"
 end
+
+action :print_names_again, description: 'echo again' do                                                          
+  log.info "again printing name"
+end
  
