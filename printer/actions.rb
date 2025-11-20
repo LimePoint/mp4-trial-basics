@@ -18,6 +18,6 @@ action :child_2 do
     log.info "I am child action 2, I can be called independently"
 end
 
-action :print_all_names_parallel, description: 'prints all names in parallel', steps: [:print_names, :print_names_without_gui], run_as: :parallel do                                                          
+action :print_all_names_parallel, description: 'prints all names in parallel', steps: [:print_names, :print_names_without_gui, :child_1, :child_2], run_as: :parallel do                                                          
   exec_command 'cat files/list_of_names.txt'
 end
