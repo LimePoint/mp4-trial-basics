@@ -1,0 +1,5 @@
+# Generate a sample yaml file for global properties
+global_properties:
+  app_name: MintPress
+  version: 1.0.0
+  default_language: en

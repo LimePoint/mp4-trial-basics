@@ -57,3 +57,8 @@ action :env_properties do
   log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
 end 
  
+action :global_properties do                                     
+  log.info "App Name: #{OpsChain.properties.global_properties.app_name}"
+  log.info "Version: #{OpsChain.properties.global_properties.version}"
+  log.info "Default Language: #{OpsChain.properties.global_properties.default_language}"
+end
