@@ -15,5 +15,12 @@
       }
     ]
   }
+
+  "opschain": {
+    "env": {
+      "MY_VARIABLE": "my_value",
+      "ANOTHER_VARIABLE": "different value"
+    }
+  }
 }
 
