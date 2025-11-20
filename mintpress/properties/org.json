@@ -1,6 +1,6 @@
 {
     "organization": {
-      "employees": [
+      "customer": [
         {
           "name": "foo",
           "phone": 234

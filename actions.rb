@@ -1,4 +1,5 @@
 
+require 'mintpress/actions.rb'
 action :child_1 do
 	log.info "I am child action 1, I can be called independently"
   end
@@ -53,11 +54,6 @@ action :child_1 do
     exec_command 'python scripts/sample.py'
   end
 
-
-  action :kv_properties do                                     
-    log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
-  end
-
   action :file_properties do
     log.info "Contents of file at /tmp/file1.txt - #{File.read('/tmp/file1.txt')}"
   end
@@ -70,7 +66,7 @@ action :child_1 do
     log.info "Value of MY_VARIABLE: #{ENV['MY_VARIABLE']}"
     log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
   end 
-  
+
   action :cleanup_temp_files do                 
 	if OpsChain.context.parents.environment&.code == 'dev1'                                                                                                                     
 	  log.info 'Cleaning up temporary files'    
