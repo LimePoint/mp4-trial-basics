@@ -232,7 +232,7 @@ action :run_python do
   log.info "Contents of file at /tmp/file1.txt - #{File.read('/tmp/file1.txt')}"
  end
 
- action :file_properties do
+ action :file_properties1 do
   exec_command "cat /tmp/file1.txt"
 end
 
