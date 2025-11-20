@@ -126,3 +126,7 @@ end
 action :kv_properties1 do
   log.info "First employee: #{OpsChain.properties.organization.employees[0].name}"
 end
+
+action :kv_properties do
+  log.info "First employee: #{OpsChain.properties.organization.employees[0].name}"
+end
