@@ -10,3 +10,7 @@ end
 action :print_all_names, description: 'prints all names', steps: [:print_names, :print_names_without_gui] do                                                          
   exec_command 'cat files/list_of_names.txt'
 end
+
+action :simple_action, description: 'A simple action with no steps' do
+  log.info "This is a simple action with no steps"
+end
