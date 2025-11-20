@@ -61,6 +61,10 @@ action :child_1 do
   action :file_properties do
     log.info "Contents of file at /tmp/file1.txt - #{File.read('/tmp/file1.txt')}"
   end
+
+  action :file_properties do
+    exec_command "cat /tmp/file1.txt"
+  end
   
   action :cleanup_temp_files do                 
 	if OpsChain.context.parents.environment&.code == 'dev1'                                                                                                                     
