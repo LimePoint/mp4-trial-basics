@@ -11,7 +11,7 @@ action :print_names, description: 'prints names from a file' do
     exec_command 'cat files/list_of_names.txt'
   end
 
-  action :print_names_without_gui do
+  action :print_names_update do
     log.info 'Again calling a new action'
   end
   
