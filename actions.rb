@@ -58,10 +58,6 @@ action :child_1 do
     log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
   end
 
-  action :kv_properties do                                     
-    log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
-  end
-  
   action :cleanup_temp_files do                 
 	if OpsChain.context.parents.environment&.code == 'dev1'                                                                                                                     
 	  log.info 'Cleaning up temporary files'    
