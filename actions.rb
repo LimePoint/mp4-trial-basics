@@ -163,4 +163,8 @@ action :print_variable do
   action :kv_properties do                                     
     log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
   end
+
+  action :file_properties do
+    exec_command "cat /tmp/file1.txt"
+  end
    
