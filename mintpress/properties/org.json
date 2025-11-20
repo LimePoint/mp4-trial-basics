@@ -4,22 +4,19 @@
       {
         "name": "foo",
         "phone": 234
-      },
-      {
-        "name": "from dev1",
-        "phone": 654
       }
     ]
   },
   "opschain": {
+    "env": {
+      "MY_VARIABLE": "my_value",
+      "ANOTHER_VARIABLE": "different value"
+    },
     "files": {
       "/tmp/file1.txt": {
         "mode": "0600",
         "content": "contents of the file"
       }
-    },
-    "env": {
-      "MY_VARIABLE": "my_value",
-      "ANOTHER_VARIABLE": "different value"
     }
   }
+}
