@@ -2,19 +2,9 @@
   "organization": {
     "employees": [
       {
-        "name": "foo",
-        "phone": 234
+        "name": "from dev1",
+        "phone": 654
       }
     ]
-  }
-}
-{
-  "opschain": {
-    "files": {
-      "/tmp/file1.txt": {
-        "mode": "0600",
-        "content": "contents of the file"
-      }
-    }
   }
 }
