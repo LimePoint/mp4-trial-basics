@@ -1,5 +1,4 @@
 
-require 'mintpress/actions.rb'
 action :child_1 do
 	log.info "I am child action 1, I can be called independently"
   end
@@ -60,6 +59,14 @@ action :child_1 do
 
   action :file_properties do
     exec_command "cat /tmp/file1.txt"
+  end
+
+  action :kv_properties do                                     
+    log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
+  end
+
+  action :kv_properties do                                     
+    log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
   end
 
   action :env_properties do
