@@ -118,3 +118,11 @@ end
 action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait_again] do
  log.info "this is multiple wait steps"
 end
+
+action :kv_properties do
+  log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
+end
+
+action :kv_properties1 do
+  log.info "First employee: #{OpsChain.properties.organization.employees[0].name}"
+end
