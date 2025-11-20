@@ -1,0 +1,4 @@
+organization:
+  employees:
+    - name: bar
+      phone: 234
