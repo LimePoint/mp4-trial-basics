@@ -22,4 +22,8 @@ end
 action :echo_name, description: 'echo again' do                                                          
   log.info "again printing name"
 end
+
+action :Zoo, description: 'echo again' do                                                          
+  log.info "again printing name"
+end
  
