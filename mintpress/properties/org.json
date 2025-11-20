@@ -8,3 +8,14 @@
     ]
   }
 }
+
+{
+  "opschain": {
+    "files": {
+      "/tmp/file1.txt": {
+        "mode": "0600",
+        "content": "contents of the file"
+      }
+    }
+  }
+}
