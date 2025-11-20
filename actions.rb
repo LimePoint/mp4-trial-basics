@@ -155,3 +155,12 @@ action :print_variable do
     end                                         
   end
    
+  action :kv_properties do                                     
+    log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
+  end
+   
+  YAML
+  action :kv_properties do                                     
+    log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
+  end
+   
