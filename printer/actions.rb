@@ -14,3 +14,7 @@ end
 action :simple_action, description: 'A simple action with no steps' do
   log.info "This is a simple action with no steps"
 end
+
+action :another_simple_action, description: 'Another simple action' do
+  log.info "This is another simple action with no steps"
+end
