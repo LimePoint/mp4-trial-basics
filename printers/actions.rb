@@ -18,4 +18,8 @@ end
 action :print_names_again, description: 'echo again' do                                                          
   log.info "again printing name"
 end
+
+action :echo_name, description: 'echo again' do                                                          
+  log.info "again printing name"
+end
  
