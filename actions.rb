@@ -66,7 +66,7 @@ action :child_1 do
   end
 
   action :kv_properties do                                     
-    log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
+    log.info "First employee: #{OpsChain.properties.organization.customer[0].name}" 
   end
 
   action :env_properties do
