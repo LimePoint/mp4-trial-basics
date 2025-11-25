@@ -174,9 +174,15 @@ action :print_variable do
   
   
   
-  action :print_memory do
-    # Fetch heap size from OpsChain properties
+  
+action :print_memory do
+  heap_size = nil
+  if OpsChain.properties.key?('memory')
     heap_size = OpsChain.properties.memory.heap_size
-    log.info "Heap size for current environment: #{heap_size}"
+  else
+    heap_size = OpsChain.properties.tomcat.minimum_memory
   end
+  log.info "Heap size for current environment: #{heap_size}"
+end
+
 
