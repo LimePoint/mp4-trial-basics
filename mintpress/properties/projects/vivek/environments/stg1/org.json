@@ -8,7 +8,6 @@
         ]
     },
     "tomcat": {
-        "minimum_memory": "1GB"
+        "minimum_memory": "4GB"
     }
-    
 }
