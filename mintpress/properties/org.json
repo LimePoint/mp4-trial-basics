@@ -1,7 +1,6 @@
 
 {
   "tomcat": {
-    "minimum_memory": "1GB",
-    "heap_size": "{{memory.heap_size}}"
+    "minimum_memory": "1GB"
   }
 }
