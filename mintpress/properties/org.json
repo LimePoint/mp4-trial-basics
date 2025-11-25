@@ -1,9 +1,9 @@
 
 {
   "tomcat": {
-    "minimum_memory": "1GB"
+    "minimum_memory": "5GB"
   },
   "memory": {
-    "minimum_memory": "5GB"
+    "minimum_memory": "1GB"
   }
 }
