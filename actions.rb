@@ -171,4 +171,12 @@ action :print_variable do
     log.info "Value of MY_VARIABLE: #{ENV['MY_VARIABLE']}"
     log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
   end 
-   
+  
+  
+  
+  action :print_memory do
+    # Fetch heap size from OpsChain properties
+    heap_size = OpsChain.properties.memory.heap_size
+    log.info "Heap size for current environment: #{heap_size}"
+  end
+
