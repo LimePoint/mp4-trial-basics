@@ -180,8 +180,7 @@ action :print_variable do
   
 
   action :print_memory1 do
-    heap_size = OpsChain.properties.tomcat.minimum_memory
-    log.info "Heap size for current environment: #{heap_size}"
+    log.info "Heap size for current environment: #{OpsChain.properties.tomcat.minimum_memory}"
   end
   
 
