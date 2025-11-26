@@ -1,4 +1,3 @@
-action :print_memory, description: 'print memory' do 
-  log.info "Memory:
-      #{OpsChain.properties.tomcat.minimum_memory}"
- end
+action :print_memory do
+  log.info "Meory: #{OpsChain.properties.tomcat.minimum_memory}"
+end
