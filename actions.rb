@@ -67,8 +67,4 @@ action :env_properties do
   log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
 end 
  
-
-action :print_memory do
-  log.info "My Heap Variable: #{ENV['minimum_memory']}" 
-end 
  
