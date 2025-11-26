@@ -7,4 +7,18 @@
       }
     ]
   }
+ "tomcat": {
+    "memory": [
+      {
+        "name": "from dev1",
+        "mem": 2
+      }
+      {
+        "name": "from stg1",
+        "mem": 4
+      }
+    ]
+  }
+
 }
+

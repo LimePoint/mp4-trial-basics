@@ -1,0 +1,11 @@
+{
+  "tomcat": {
+    "memory": [
+      {
+        "name": "dev1",
+        "mem": "2GB"
+      }
+    ]
+  }
+}
+
