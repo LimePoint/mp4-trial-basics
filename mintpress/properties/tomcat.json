@@ -1,5 +1,10 @@
+
 {
   "tomcat": {
-  "minimum_memory": "1GB"
+    "minimum_memory": "1GB",
+    "memory_by_environment": {
+      "dev1": "2GB",
+      "stg1": "4GB"
+    }
   }
 }
