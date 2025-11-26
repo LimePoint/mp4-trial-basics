@@ -6,5 +6,8 @@
                 "phone": 237
             }
         ]
+    },
+    "tomcat": {
+        "minimum_memory": "4GB"
     }
 }
