@@ -10,5 +10,9 @@
       "MY_VARIABLE": "my_value",
       "ANOTHER_VARIABLE": "different value"
     }
+  },
+  {
+ "tomcat": {
+   "minimum_memory": "4GB"
   }
 }

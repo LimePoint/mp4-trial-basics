@@ -69,6 +69,5 @@ end
  
 
 action :tomcat_properties do
-  log.info "Tomcat minimum memory: #{node['tomcat']['minimum_memory']}"
-  # Add more properties here if needed
+  log.info "Tomcat minimum memory: #{tomcat['minimum_memory']}" 
 end
