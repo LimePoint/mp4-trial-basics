@@ -1,10 +1,5 @@
 {
-    "organization": {
-      "employees": [
-        {
-          "name": "foo",
-          "phone": 234
-        }
-      ]
-    }
+  "tomcat": {
+    "minimum_memory": "1GB"
   }
+}
