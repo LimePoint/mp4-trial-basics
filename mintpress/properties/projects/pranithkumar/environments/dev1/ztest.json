@@ -1,0 +1,7 @@
+{
+  "tomcat": {
+    "bpk": {
+      "minimum_memory": "2GB"
+    }
+  }
+}
