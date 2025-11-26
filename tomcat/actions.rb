@@ -1,4 +1,4 @@
-require 'opschain'
+#require 'opschain'
 #minimum_memory = 128 # Set this to the desired minimum memory value
 
 action :print_memory, description: 'prints memory usage from a file' do
