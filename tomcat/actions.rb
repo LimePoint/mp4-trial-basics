@@ -1,3 +1,3 @@
 action :print_memory do
-  log.info "My Heap Variable: #{ENV['minimum_memory']}" 
+  log.info "My Heap Variable: #{ENV['MY_VARIABLE']}" 
 end 
