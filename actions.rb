@@ -67,3 +67,7 @@ action :env_properties do
   log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
 end 
  
+action :print_memory, description: 'print memory' do
+  log.info "Memory:
+      #{OpsChain.properties.tomcat.minimum_memory}"
+ end
