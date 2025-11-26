@@ -1,3 +1,4 @@
-action :print_memory do
-  log.info "My Heap Variable: #{TOMCAT['MY_VARIABLE']}" 
-end 
+
+action :tomcat_properties do
+  log.info "Tomcat minimum memory: #{node['tomcat']['minimum_memory']}" 
+end

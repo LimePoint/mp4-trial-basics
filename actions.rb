@@ -67,6 +67,8 @@ action :env_properties do
   log.info "Value of ANOTHER_VARIABLE: #{ENV['ANOTHER_VARIABLE']}"
 end 
  
- action :print_memory do
-  log.info "My Heap Variable: #{TOMCAT['MY_VARIABLE']}" 
-end 
+
+action :tomcat_properties do
+  log.info "Tomcat minimum memory: #{node['tomcat']['minimum_memory']}"
+  # Add more properties here if needed
+end
