@@ -68,6 +68,7 @@ action :env_properties do
 end 
  
 
-action :tomcat_properties do
-  log.info "Tomcat minimum memory: #{tomcat['minimum_memory']}" 
-end
+action :print_memory, description: 'print memory' do
+  log.info "Memory:
+      #{OpsChain.properties.tomcat.minimum_memory}"
+ end
