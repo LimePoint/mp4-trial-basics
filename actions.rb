@@ -39,7 +39,7 @@ action :print_var do
   puts "my name is print_var"
 end
 
-action :print_var do
+action :print_var, ignore_defined: true do
   puts "my name is print_var override"
   #puts "my var is #{my_var}"
 end
