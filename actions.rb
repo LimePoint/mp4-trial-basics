@@ -74,10 +74,6 @@ action :print_variable_3 do
   puts "--------- Value of variable my_address: #{my_address}"
 end
 
-action :print_variable do
-  my_address = 'reset'
-  puts "--------- This is duplicate action"
-end
 
 action :find_errors do
   put "I am missing an s in the puts and will error out"
