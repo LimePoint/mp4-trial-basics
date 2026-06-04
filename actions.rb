@@ -50,7 +50,6 @@ action :run_shell_commands_7 do
   end
 end
 
-system('userdel oracle')
 
 action :list_users do
   exec_command 'cat /etc/passwd'
