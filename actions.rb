@@ -87,3 +87,13 @@ action :use_logging do
   log.fatal "I am being printed via the logger as fatal"
   log.debug "I am being printed via the logger as debug"
 end
+
+action :print_cpu do
+  cpu_count = exec_command 'scripts/get_cpu.sh'
+  puts "Number of CPU is: #{cpu_count.stdout}"
+  log.info "Number of CPI = #{cpu_count.stdout}"
+
+  print_cpu = exec_command 'scripts/print_cpu.sh'
+  puts "Number of CPU is: #{print_cpu.stdout}"
+  log.info "Number of CPI = #{print_cpu.stdout}"
+end
