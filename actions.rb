@@ -77,3 +77,22 @@ action :run_shell_commands_5_1 ,ignore_failure: true do
  exec_command '/tmp/non_existent_script.sh'
  puts "I will never get run"
 end
+
+action :run_shell_commands_6 do
+  result = exec_command 'cat /etc/passwd'
+  if result.success?
+    puts "found the list of users: #{result.stdout}"
+  else
+    puts "did not find any users."
+  end
+end
+
+
+action :run_shell_commands_7 do
+  result = exec_command 'cat /etc/passwd', live_stream: false
+  if result.success?
+    puts "found the list of users: #{result.stdout}"
+  else
+   puts "did not find any users, error was: #{result.stderr}"
+  end
+end
