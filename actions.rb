@@ -23,5 +23,5 @@ end
 
 action :run_shell_commands_5 do
  exec_command '/tmp/non_existent_script.sh'
- puts “I will never get run”
+ puts "I will never get run"
 end
