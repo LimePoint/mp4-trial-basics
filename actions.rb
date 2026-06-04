@@ -29,13 +29,13 @@ end
 
 
 
-action :get_cpu do
-  cpu = exec_command 'scripts/get_cpu.sh'
+action :cpu do
+  cpu = exec_command 'bash scripts/get_cpu_new.sh'
 
   if cpu.success?
-    exec_command "scripts/print_cpu.sh"
+    exec_command 'bash scripts/print_cpu_new.sh'
   else
-    puts "Failed to get CPU count"
+    puts "Failed to get no. of cpu count"
   end
 end
 
