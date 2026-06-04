@@ -157,3 +157,7 @@ end
 action :wait_step_with_name, steps: [OpsChain.wait_step(step_name: 'Wait for network team'), :post_wait] do
   log.info "I have a name"
 end
+
+action :run_python do
+  exec_command 'python scripts/sample.py'
+end
