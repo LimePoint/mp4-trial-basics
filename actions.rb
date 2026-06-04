@@ -89,11 +89,11 @@ action :use_logging do
 end
 
 action :print_cpu do
-  cpu_count = exec_command 'sh scripts/get_cpu.sh'
+  cpu_count = exec_command 'sh scripts/get_cpu.sh', live_stream: false
   output = cpu_count.stdout
   log.info "Number of CPI = #{output}"
 
-  print_cpu = exec_command 'sh scripts/print_cpu.sh #{output}'
+  print_cpu = exec_command 'sh scripts/print_cpu.sh #{output}', live_stream: false
   puts "Number of CPU is: #{output}"
   log.info "Number of CPI = #{output}"
 end
