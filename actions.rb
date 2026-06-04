@@ -91,9 +91,9 @@ action :use_logging do
 end
 
 action :print_cpus do                                      
-  output = exec_command "bash scripts/get_cpu.sh", live_stream: false
+  output = exec_command "bash get_cpu.sh", live_stream: false
   cpu = output.stdout
   log.info "output from get_cpu - #{cpu}"
-  result = exec_command "bash scripts/print_cpu.sh #{cpu}", live_stream: false
+  result = exec_command "bash print_cpu.sh #{cpu}", live_stream: false
   log.info result.stdout
 end 
