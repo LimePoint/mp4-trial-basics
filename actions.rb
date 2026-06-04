@@ -119,3 +119,13 @@ end
 action :grandparent_1, steps: [:parent_1, :parent_2] do
  log.info "I am grandparent 1"
 end
+
+action :grandchild_2 do
+  log.info "I am grand child action 1, I can be called independently. 
+  But when called in prereq mode, I'll run before the calling action"
+end
+
+action parent_3: [:grandchild_1], steps: [:child_1, :child_2] do
+  log.info "I am parent action 1 and will now call child_1 and child_2 one by one."
+end
+ 
