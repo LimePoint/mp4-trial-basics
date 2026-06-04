@@ -68,3 +68,28 @@ end
 action parent_3: [:grandchild_1], steps: [:child_1, :child_2] do
   log.info "I am parent action 1 and will now call child_1 and child_2 one by one."
 end
+
+action :wait_step, steps: [OpsChain.wait_step, :post_wait] do
+  log.info "This step is going to wait to be manually continuing before running post_wait action"
+end    
+       
+action :post_wait do
+ log.info "I will run after the wait step"
+end    
+
+action :post_wait_again do
+ log.info "I will also run after a wait step"
+end    
+
+       
+action :multiple_wait_steps, steps: [OpsChain.wait_step, :post_wait, OpsChain.wait_step, :post_wait_again] do
+ log.info "this is multiple wait steps"
+end    
+
+action :wait_step_with_timer, steps: [OpsChain.wait_step(seconds: 90), :post_wait] do
+  log.info "I will wait 90 seconds before I run post_wait"
+end
+
+action :wait_step_with_name, steps: [OpsChain.wait_step(step_name: 'Wait for network team'), :post_wait] do
+  log.info "I have a name"
+end
