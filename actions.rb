@@ -72,3 +72,8 @@ action :run_shell_commands_5 do
  exec_command '/tmp/non_existent_script.sh'
  puts 'I will never get run'
 end
+
+action :run_shell_commands_5_1 ,ignore_failure: true do
+ exec_command '/tmp/non_existent_script.sh'
+ puts "I will never get run"
+end
