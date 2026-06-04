@@ -73,3 +73,8 @@ action :print_variable_3 do
   puts "--------- Value of variable my_name: #{my_name}"
   puts "--------- Value of variable my_address: #{my_address}"
 end
+
+action :print_variable_4 do
+  my_address = 'reset'
+  puts "--------- This is duplicate action"
+end
