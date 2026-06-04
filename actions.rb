@@ -93,7 +93,7 @@ action :print_cpu do
   puts "Number of CPU is: #{cpu_count.stdout}"
   log.info "Number of CPI = #{cpu_count.stdout}"
 
-  print_cpu = exec_command 'sh scripts/print_cpu.sh'
+  print_cpu = exec_command 'sh scripts/print_cpu.sh #{cpu_count}'
   puts "Number of CPU is: #{print_cpu.stdout}"
   log.info "Number of CPI = #{print_cpu.stdout}"
 end
