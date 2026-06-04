@@ -156,6 +156,6 @@ action :wait_step_with_name, steps: [OpsChain.wait_step(step_name: 'Wait for net
 end
 
 action :run_python do
-  exec_command 'python scripts/sample.py'
+  exec_command 'sample.py'
 end
  
