@@ -1,5 +1,4 @@
-require_relative 'common/pod_step_read'
-require_relative 'common/pod_step_write'
+require_relative 'common/pod_step'
 
 action :hello_world do
   puts "Hello world from MintPress"
