@@ -17,5 +17,5 @@ end
 
 
 action :print_names_test, description: 'prints new names' do                                                          
-  log.info 'new name printer'
+  log.info 'new name printer1'
 end
