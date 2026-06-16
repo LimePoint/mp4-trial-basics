@@ -119,3 +119,11 @@ action :cleanup_temp_files do
     log.info 'not cleaning anything as environment is not dev1'
   end
 end
+
+action :kv_properties do                                     
+  log.info "Total number of employees: #{OpsChain.properties.to_yaml}"
+end
+
+action :kv_properties_2 do                                     
+  log.info "First employee: #{OpsChain.properties.organization.employees[0].name}" 
+end
